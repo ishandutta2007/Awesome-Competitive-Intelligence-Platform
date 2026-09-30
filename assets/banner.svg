@@ -10,124 +10,102 @@
       <stop offset="50%" stop-color="#818cf8"/>
       <stop offset="100%" stop-color="#c084fc"/>
     </linearGradient>
-    <linearGradient id="accentGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#f43f5e"/>
-      <stop offset="100%" stop-color="#fb7185"/>
-    </linearGradient>
-    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
-      <feGaussianBlur stdDeviation="8" result="blur"/>
-      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
-    </filter>
   </defs>
 
   <style>
-    .title { font-family: system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; font-weight: 900; font-size: 42px; fill: url(#textGrad); }
-    .subtitle { font-family: system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; font-weight: 500; font-size: 20px; fill: #cbd5e1; }
-    .badge-text { font-family: system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; font-weight: 700; font-size: 14px; fill: #ffffff; }
-    
-    /* Dynamic background animations placed safely behind foreground text */
-    @keyframes pulse {
-      0% { opacity: 0.15; transform: scale(1); }
-      50% { opacity: 0.35; transform: scale(1.08); }
-      100% { opacity: 0.15; transform: scale(1); }
+    .title { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; font-weight: 800; font-size: 38px; fill: #38bdf8; }
+    .subtitle { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; font-weight: 500; font-size: 18px; fill: #cbd5e1; }
+    .badge-text { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; font-weight: 700; font-size: 13px; fill: #94a3b8; }
+    .pill-text { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; font-weight: 600; font-size: 14px; fill: #e2e8f0; }
+
+    /* CSS Animations */
+    @keyframes pulseGlow {
+      0% { opacity: 0.2; transform: scale(1); }
+      50% { opacity: 0.4; transform: scale(1.05); }
+      100% { opacity: 0.2; transform: scale(1); }
     }
-    @keyframes float1 {
-      0% { transform: translateY(0px); }
-      50% { transform: translateY(-12px); }
-      100% { transform: translateY(0px); }
-    }
-    @keyframes float2 {
-      0% { transform: translateY(0px); }
-      50% { transform: translateY(12px); }
-      100% { transform: translateY(0px); }
-    }
-    @keyframes dash {
+    @keyframes dashMove {
       to { stroke-dashoffset: -40; }
     }
-    
-    .bg-node { animation: pulse 6s infinite ease-in-out; transform-origin: center; }
-    .float-elem1 { animation: float1 5s infinite ease-in-out; }
-    .float-elem2 { animation: float2 7s infinite ease-in-out; }
-    .flow-line { stroke-dasharray: 8, 8; animation: dash 2s linear infinite; }
+    @keyframes floatY {
+      0% { transform: translateY(0px); }
+      50% { transform: translateY(-8px); }
+      100% { transform: translateY(0px); }
+    }
+
+    .glow-circle { animation: pulseGlow 6s ease-in-out infinite; transform-origin: center; }
+    .moving-dash { stroke-dasharray: 8, 8; animation: dashMove 3s linear infinite; }
+    .floating-pill { animation: floatY 4s ease-in-out infinite; }
   </style>
 
-  <!-- Base Background -->
+  <!-- Base Background Card -->
   <rect width="1200" height="320" rx="16" fill="url(#bgGrad)"/>
   
-  <!-- Subtle Grid Pattern -->
-  <g opacity="0.05" stroke="#ffffff" stroke-width="1">
-    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+  <!-- Grid Pattern -->
+  <g opacity="0.08" stroke="#ffffff" stroke-width="1">
+    <pattern id="gridPattern" width="40" height="40" patternUnits="userSpaceOnUse">
       <path d="M 40 0 L 0 0 0 40"/>
     </pattern>
-    <rect width="1200" height="320" fill="url(#grid)"/>
+    <rect width="1200" height="320" fill="url(#gridPattern)"/>
   </g>
 
-  <!-- Background Dynamic Visualizations (Layered BEHIND foreground elements) -->
-  <g class="bg-node" opacity="0.25">
-    <circle cx="150" cy="80" r="100" fill="#38bdf8" filter="blur(40px)"/>
-    <circle cx="1050" cy="240" r="120" fill="#c084fc" filter="blur(50px)"/>
-    <circle cx="900" cy="80" r="80" fill="#f43f5e" filter="blur(45px)"/>
+  <!-- Background Decorative Glowing Orbs -->
+  <g class="glow-circle">
+    <circle cx="150" cy="80" r="100" fill="#38bdf8" opacity="0.15"/>
+    <circle cx="1050" cy="240" r="120" fill="#c084fc" opacity="0.15"/>
   </g>
 
-  <!-- Dynamic Graph Lines & Nodes (Right Side Background Accent) -->
-  <g opacity="0.2" class="float-elem1">
-    <path class="flow-line" d="M 750 220 L 850 140 L 950 180 L 1080 90" fill="none" stroke="#38bdf8" stroke-width="3"/>
-    <path class="flow-line" d="M 750 260 L 880 200 L 980 230 L 1100 150" fill="none" stroke="#c084fc" stroke-width="3"/>
-    <circle cx="850" cy="140" r="6" fill="#38bdf8"/>
-    <circle cx="950" cy="180" r="6" fill="#38bdf8"/>
-    <circle cx="1080" cy="90" r="8" fill="#38bdf8"/>
-    <circle cx="880" cy="200" r="6" fill="#c084fc"/>
-    <circle cx="1100" cy="150" r="8" fill="#c084fc"/>
+  <!-- Background Animated Data Lines (Right Side Accent) -->
+  <g opacity="0.25">
+    <path class="moving-dash" d="M 750 220 L 850 140 L 950 180 L 1080 90" fill="none" stroke="#38bdf8" stroke-width="3"/>
+    <path class="moving-dash" d="M 750 260 L 880 200 L 980 230 L 1100 150" fill="none" stroke="#c084fc" stroke-width="3"/>
+    <circle cx="850" cy="140" r="5" fill="#38bdf8"/>
+    <circle cx="950" cy="180" r="5" fill="#38bdf8"/>
+    <circle cx="1080" cy="90" r="6" fill="#38bdf8"/>
+    <circle cx="880" cy="200" r="5" fill="#c084fc"/>
+    <circle cx="1100" cy="150" r="6" fill="#c084fc"/>
   </g>
 
-  <!-- Dynamic Radar Wave (Left Accent) -->
-  <g class="float-elem2" opacity="0.15" transform="translate(80, 190)">
-    <circle cx="0" cy="0" r="40" fill="none" stroke="#38bdf8" stroke-width="2"/>
-    <circle cx="0" cy="0" r="70" fill="none" stroke="#818cf8" stroke-width="1.5" stroke-dasharray="4,4"/>
-    <circle cx="0" cy="0" r="100" fill="none" stroke="#c084fc" stroke-width="1"/>
-  </g>
-
-  <!-- FOREGROUND CONTENT (Guaranteed Visibility & Contrast) -->
-  <!-- Top Category Pill -->
+  <!-- Top Category Tag -->
   <g transform="translate(60, 45)">
     <rect width="280" height="32" rx="16" fill="#1e293b" stroke="#334155" stroke-width="1.5"/>
-    <circle cx="18" cy="16" r="6" fill="#38bdf8"/>
-    <text x="34" y="21" class="badge-text" fill="#94a3b8">COMPETITIVE INTELLIGENCE ECOSYSTEM</text>
+    <circle cx="18" cy="16" r="5" fill="#38bdf8"/>
+    <text x="34" y="21" class="badge-text">COMPETITIVE INTELLIGENCE ECOSYSTEM</text>
   </g>
 
   <!-- Main Title -->
-  <text x="60" y="130" class="title" filter="url(#glow)">Awesome Competitive Intelligence Platform 🎯</text>
+  <text x="60" y="130" class="title">Awesome Competitive Intelligence Platform</text>
 
   <!-- Subtitle -->
-  <text x="60" y="175" class="subtitle">Curated SaaS Products, Open-Source Tools, Battle Cards & Market Signal Monitoring</text>
+  <text x="60" y="175" class="subtitle">Curated SaaS Products, Open-Source Tools, Battle Cards &amp; Market Signals</text>
 
-  <!-- Feature Pills / Highlights -->
-  <g transform="translate(60, 215)">
+  <!-- Feature Tags / Pills (Clean SVG with standard system fonts & safe SVG elements) -->
+  <g transform="translate(60, 215)" class="floating-pill">
     <!-- Pill 1 -->
-    <g transform="translate(0, 0)" class="float-elem1">
+    <g transform="translate(0, 0)">
       <rect width="180" height="40" rx="8" fill="#0f172a" stroke="#38bdf8" stroke-width="1.5"/>
-      <text x="16" y="25" font-family="system-ui, sans-serif" font-weight="600" font-size="14" fill="#e2e8f0">📊 Competitor Tracking</text>
+      <text x="16" y="25" class="pill-text">Competitor Tracking</text>
     </g>
 
     <!-- Pill 2 -->
-    <g transform="translate(195, 0)" class="float-elem2">
+    <g transform="translate(195, 0)">
       <rect width="165" height="40" rx="8" fill="#0f172a" stroke="#818cf8" stroke-width="1.5"/>
-      <text x="16" y="25" font-family="system-ui, sans-serif" font-weight="600" font-size="14" fill="#e2e8f0">⚔️ Battle Cards</text>
+      <text x="16" y="25" class="pill-text">Battle Cards</text>
     </g>
 
     <!-- Pill 3 -->
-    <g transform="translate(375, 0)" class="float-elem1">
+    <g transform="translate(375, 0)">
       <rect width="190" height="40" rx="8" fill="#0f172a" stroke="#c084fc" stroke-width="1.5"/>
-      <text x="16" y="25" font-family="system-ui, sans-serif" font-weight="600" font-size="14" fill="#e2e8f0">🔍 Web Change Alerts</text>
+      <text x="16" y="25" class="pill-text">Web Change Alerts</text>
     </g>
 
     <!-- Pill 4 -->
-    <g transform="translate(580, 0)" class="float-elem2">
+    <g transform="translate(580, 0)">
       <rect width="170" height="40" rx="8" fill="#0f172a" stroke="#f43f5e" stroke-width="1.5"/>
-      <text x="16" y="25" font-family="system-ui, sans-serif" font-weight="600" font-size="14" fill="#e2e8f0">⚡ Sales Enablement</text>
+      <text x="16" y="25" class="pill-text">Sales Enablement</text>
     </g>
   </g>
 
-  <!-- Bottom Accent Border Line -->
+  <!-- Bottom Accent Line -->
   <rect x="0" y="314" width="1200" height="6" fill="url(#textGrad)"/>
 </svg>
