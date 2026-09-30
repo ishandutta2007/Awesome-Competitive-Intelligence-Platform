@@ -55,7 +55,7 @@ Welcome to the **Awesome Competitive Intelligence Platform** curated list! 🚀
 
 ## 🔓 Open-Source GitHub Projects
 
-*Self-hosted software, web change monitors, AI intelligence gatherers, and scraping frameworks. Sorted by GitHub Stars_Count in descending order.*
+*Self-hosted software, web change monitors, AI intelligence gatherers, and scraping frameworks. Sorted by GitHub_Stars_Count in descending order.*
 
 | Project | GitHub_Stars_Badge | Primary Use Case & CI Capabilities |
 | :--- | :--- | :--- |
