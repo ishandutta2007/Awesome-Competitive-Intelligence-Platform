@@ -1,0 +1,2 @@
+# Awesome-Competitive-Intelligence-Platform
+
