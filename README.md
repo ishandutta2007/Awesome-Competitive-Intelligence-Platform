@@ -4,7 +4,7 @@
 
 # Awesome Competitive Intelligence Platform 🎯
 
-[![Awesome](https://img.shields.io/badge/Awesome-%E2%9C%94-blueviolet?style=flat-square&logo=github)](https://github.com/ishandutta2007/Awesome-Awesome-Awesome)<a href="https://discord.gg/jc4xtF58Ve"><img src="https://img.shields.io/badge/Discord-5865F2?style=for-the-badge&logo=discord&logoColor=white" alt="Discord" /></a> [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE) [![GitHub stars](https://img.shields.io/github/stars/ishandutta2007/Awesome-Competitive-Intelligence-Platform?style=social)](https://github.com/ishandutta2007/Awesome-Competitive-Intelligence-Platform/stargazers) <a href="https://github.com/ishandutta2007"><img alt="GitHub followers" src="https://img.shields.io/github/followers/ishandutta2007?label=Follow" /></a>
+[![Awesome](https://img.shields.io/badge/Awesome-%E2%9C%94-blueviolet?style=flat-square&logo=github)](https://github.com/ishandutta2007/Awesome-Awesome-Awesome)<a href="https://discord.gg/jc4xtF58Ve"><img src="https://img.shields.io/badge/Discord-5865F2?style=for-the-badge&logo=discord&logoColor=white" alt="Discord" /></a> [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE) [![GitHub_Stars](https://img.shields.io/github/stars/ishandutta2007/Awesome-Competitive-Intelligence-Platform?style=social)](https://github.com/ishandutta2007/Awesome-Competitive-Intelligence-Platform/stargazers) <a href="https://github.com/ishandutta2007"><img alt="GitHub followers" src="https://img.shields.io/github/followers/ishandutta2007?label=Follow" /></a>
 
 ## 🌟 Overview & Ecosystem Overview
 
@@ -55,9 +55,9 @@ Welcome to the **Awesome Competitive Intelligence Platform** curated list! 🚀
 
 ## 🔓 Open-Source GitHub Projects
 
-*Self-hosted software, web change monitors, AI intelligence gatherers, and scraping frameworks. Sorted by GitHub Star Count in descending order.*
+*Self-hosted software, web change monitors, AI intelligence gatherers, and scraping frameworks. Sorted by GitHub Stars_Count in descending order.*
 
-| Project | GitHub Stars Badge | Primary Use Case & CI Capabilities |
+| Project | GitHub_Stars_Badge | Primary Use Case & CI Capabilities |
 | :--- | :--- | :--- |
 | **[Playwright](https://github.com/microsoft/playwright)** 🎭 | [![Stars](https://img.shields.io/github/stars/microsoft/playwright?style=social&color=white)](https://github.com/microsoft/playwright/stargazers) | Reliable browser automation & headful/headless web scraping for dynamic competitor SPA monitoring. |
 | **[Scrapy](https://github.com/scrapy/scrapy)** 🕷️ | [![Stars](https://img.shields.io/github/stars/scrapy/scrapy?style=social&color=white)](https://github.com/scrapy/scrapy/stargazers) | High-performance open-source web crawling & data extraction framework for tracking competitor product catalogs. |
@@ -86,7 +86,7 @@ Contributions are highly appreciated! Please follow these simple steps:
 
 1. Fork this repository 🍴
 2. Create a new feature branch (`git checkout -b feature/add-new-ci-tool`)
-3. Add your entry keeping the exact table format, pricing specificity, and star badges 📝
+3. Add your entry keeping the exact table format, pricing specificity, and Stars_Badges 📝
 4. Commit your changes (`git commit -m 'Add New CI Tool'`)
 5. Push to your branch (`git push origin feature/add-new-ci-tool`)
 6. Open a Pull Request 🚀
